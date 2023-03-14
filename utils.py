@@ -32,6 +32,18 @@ class BaseUtils:
                     return True if no_json else json.loads(await response.text())
                 return
 
+    @staticmethod
+    def remove_duplicates(products, nm_name):
+        articles = []
+        output_data = []
+
+        for product in products:
+            article = product.get(nm_name)
+            if article not in articles:
+                articles.append(article)
+                output_data.append(product)
+        return output_data
+
     async def update_prices(self, prices, token_auth):
         url = 'https://suppliers-api.wildberries.ru/public/api/v1/prices'
 

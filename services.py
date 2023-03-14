@@ -45,8 +45,8 @@ class BaseServices:
                 'discount': basicSale
             })
 
-        # prices_to_be_updated = prices_to_be_updated[:1]
-        # discounts_to_be_updated = discounts_to_be_updated[:1]
+        prices_to_be_updated = self.utils.remove_duplicates(products=prices_to_be_updated, nm_name='nmId')
+        discounts_to_be_updated = self.utils.remove_duplicates(products=discounts_to_be_updated, nm_name='nm')
 
         await self.utils.update_prices(prices=prices_to_be_updated, token_auth=auth)
         await self.utils.update_discounts(discounts=discounts_to_be_updated, token_auth=auth)
