@@ -14,7 +14,7 @@ def find_vendor_code_column(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def find_price_column(df: pd.DataFrame) -> pd.DataFrame:
-    stock_names = ['МРЦ ,  руб', 'РРЦ Wildberries, руб']
+    stock_names = ['МРЦ ,  руб', 'РРЦ Wildberries, руб', 'ВБ, руб']
     columns = df.columns
     for index in df.index[:100]:
         for column in columns:

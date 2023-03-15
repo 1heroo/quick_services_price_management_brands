@@ -6,6 +6,7 @@ import uvicorn
 from fastapi import FastAPI, File
 
 from services import BaseServices
+from settings import settings
 from utils import BaseUtils
 from xlsx_handler_utils import handle_xlsx, find_vendor_code_column, find_price_column
 
@@ -31,6 +32,7 @@ async def root():
         price_column = find_price_column(df=df)
         await services.price_management(df=df, price_column=price_column, vendorCode_column=vendorCode_column)
         os.remove(file_name)
+
 
 if __name__ == '__main__':
     uvicorn.run(
