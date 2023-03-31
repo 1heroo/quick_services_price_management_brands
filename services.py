@@ -29,8 +29,10 @@ class BaseServices:
         df = pd.merge(
             new_df, products_df, how='inner', left_on=vendorCode_column, right_on='vendorCodes_no_bland'
         )
+        print(df)
         for index in df.index:
-            basicSale = 31
+
+            basicSale = 5
             price = math.ceil(float(df[price_column][index]))
             price = price / (100 - basicSale) * 100
             price = math.ceil(price)

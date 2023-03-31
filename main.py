@@ -30,6 +30,7 @@ async def root():
 
         vendorCode_column = find_vendor_code_column(df=df)
         price_column = find_price_column(df=df)
+        print(vendorCode_column, price_column)
         await services.price_management(df=df, price_column=price_column, vendorCode_column=vendorCode_column)
         os.remove(file_name)
 
