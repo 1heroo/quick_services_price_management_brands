@@ -32,7 +32,7 @@ class BaseServices:
         print(df)
         for index in df.index:
 
-            basicSale = 5
+            basicSale = 31
             price = math.ceil(float(df[price_column][index]))
             price = price / (100 - basicSale) * 100
             price = math.ceil(price)
