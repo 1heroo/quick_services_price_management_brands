@@ -39,7 +39,7 @@ class BaseServices:
 
             prices_to_be_updated.append({
                 'nmId': int(df['nmID'][index]),
-                'price': price
+                'price': price - .4999
             })
             discounts_to_be_updated.append({
                 'nm': int(df['nmID'][index]),
