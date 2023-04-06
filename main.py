@@ -21,7 +21,6 @@ async def root():
         if 'Штурм' in file:
             list_name = 'ПРАЙС'
         if 'PIT' in file:
-            print(file)
             list_name = 'Инструменты'
         file_name = str(int(time.time())) + '.csv'
 
