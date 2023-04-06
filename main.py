@@ -18,7 +18,7 @@ services = BaseServices()
 @app.post("/")
 async def root():
     for file in os.listdir('file_db/'):
-
+        print(file)
         if 'Штурм' in file:
             list_name = 'ПРАЙС'
         if 'PIT' in file:
