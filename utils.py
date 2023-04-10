@@ -50,7 +50,7 @@ class BaseUtils:
         len_prices = len(prices)
         times = len_prices // 1000
         start = 0
-
+        print(prices)
         for i in range(times + 1):
             chunk_prices = prices[start: start + 1000] if i != times else prices[start: len_prices]
             start += 1000
@@ -69,7 +69,6 @@ class BaseUtils:
             start += 1000
 
             data = await self.make_post_request(url=url, headers=token_auth, payload=chunk_discounts)
-            print(data)
 
     async def get_products_from_api(self, token_auth):
         data = []

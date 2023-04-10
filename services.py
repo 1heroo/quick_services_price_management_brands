@@ -29,17 +29,17 @@ class BaseServices:
         df = pd.merge(
             new_df, products_df, how='inner', left_on=vendorCode_column, right_on='vendorCodes_no_bland'
         )
-        print(df)
+
         for index in df.index:
 
             basicSale = 31
-            price = math.ceil(float(df[price_column][index]))
+            price = math.ceil(float(df[price_column][index])) - 15
             price = price / (100 - basicSale) * 100
             price = math.ceil(price)
 
             prices_to_be_updated.append({
                 'nmId': int(df['nmID'][index]),
-                'price': price - 15 - .4999
+                'price': price
             })
             discounts_to_be_updated.append({
                 'nm': int(df['nmID'][index]),
